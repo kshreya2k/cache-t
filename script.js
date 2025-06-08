@@ -1,24 +1,32 @@
 function updateClock() {
   const now = new Date();
-  document.getElementById("clock").textContent = now.toLocaleTimeString();
+  const clock = now.toLocaleTimeString('en-US', {
+    hour: 'numeric',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true
+  });
+  document.getElementById("clock").textContent = clock;
 }
 
-setInterval(updateClock, 1000);
-updateClock(); // initial call
-
 function updateExpiry() {
-  const expiry = new Date(Date.now() + 2 * 30 * 60 * 1000); // now + 2 hours
-  const options = {
+  const expiry = new Date(Date.now() + 2 * 60 * 60 * 1000); // 2 hours from now
+
+  const datePart = expiry.toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
-    year: 'numeric',
+    year: 'numeric'
+  });
+
+  const timePart = expiry.toLocaleTimeString('en-US', {
     hour: 'numeric',
     minute: '2-digit',
     hour12: true
-  };
-  const formatted = expiry.toLocaleString('en-US', options);
-  document.getElementById("expire-time").textContent = `Expires ${formatted}`;
+  });
+
+  document.getElementById("expire-time").textContent = `Expires ${datePart} at ${timePart}`;
 }
+
 
 setInterval(updateClock, 1000);
 updateClock();
