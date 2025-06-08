@@ -1,0 +1,122 @@
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 10px #0b3d91;
+  }
+  50% {
+    box-shadow: 0 0 0 28px rgba(11, 61, 145, 0.5); /* matches 2x base ring */
+  }
+  100% {
+    box-shadow: 0 0 0 10px #0b3d91;
+  }
+}
+
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f3f3f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.ticket {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px; /* added */
+}
+
+.header h1 {
+  font-size: 16px;
+  margin: 0;
+  color: #092a65;
+}
+
+.header button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 500;
+}
+
+.header-subtext {
+  font-size: 12px;
+  color: #5a5a5a;
+  margin-top: 2px;
+}
+
+.subtitle {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.circle {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #03245d;
+  font-weight: bold;
+  font-size: 12px;
+  position: relative;
+  box-shadow: 0 0 0 20px #03245d;
+  animation: pulse-ring 1.6s ease-in-out infinite;
+  margin-bottom: 56px; /* added */
+  gap: 2px; /* adds space between logo and text */
+}
+
+.circle .logo {
+  width: 13px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.clock {
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 55px;
+}
+
+.info-box {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+}
+
+#expire-time {
+  font-size: 13px; /* previously 12px or default */
+  font-weight:530;
+}
