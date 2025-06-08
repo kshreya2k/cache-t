@@ -29,7 +29,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 10vh; /* 10% of the viewport height */
   text-align: left;
 }
 
@@ -120,7 +120,7 @@ body {
   font-size: 48px;
   font-weight: bold;
   margin-top: 80px;
-  margin-bottom: 8px;
+  margin-bottom: 2vh;
   line-height: 1.2;
 }
 
@@ -130,12 +130,12 @@ body {
   font-size: 12px;
   color: #333;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12); /* subtle shadow */
-  margin-bottom: 20px;
+  margin-bottom: 2vh;
 }
 
 .expire {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
-  margin-top: 25px; /* Increased gap */
+  margin-top: 5vh; /* Increased gap */
 
 }
