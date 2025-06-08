@@ -3,7 +3,7 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #f3f3f3;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +43,7 @@ body {
   font-size: 18px;
   font-weight: 600;
   margin: 0;
-  color: #092a65;
+  color: #00173f;
 }
 
 .header-subtext {
