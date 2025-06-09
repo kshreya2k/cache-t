@@ -128,7 +128,7 @@ body {
   padding: 3px 30px;
   text-align: left;
   font-size: 12px;
-  color: #333;
+  color: #303030;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12); /* subtle shadow */
   margin-bottom: 2vh;
 }
@@ -179,8 +179,8 @@ body {
   box-shadow:
     0 0    0    5px   rgba(11,31,72,0),  /* blurred ring off */
     0 0    0    8px   #06265e,           /* deep-blue static */
-    0 0    0    8px   #082f72;           /* medium-blue thin */
-  animation: zoomOut 1.6s ease-in-out infinite;
+    0 0    0    8px   #052e76;           /* medium-blue thin */
+  animation: zoomOut 1.5s ease-in-out infinite;
 }
 
 @keyframes zoomOut {
@@ -188,7 +188,7 @@ body {
     box-shadow:
       0 0    0    0px   rgba(11,31,72,0),  /* no blur at start/end */
       0 0    0    5px   #06265e,           /* inner deep-blue thin */
-      0 0    0    8px   #082f72;           /* outer medium-blue thin */
+      0 0    0    10px   #052e76;           /* outer medium-blue thin */
   }
   50% {
     box-shadow:
@@ -197,7 +197,7 @@ body {
       /* keep the deep-blue static */
       0 0    0    8px   #06265e,
       /* outer medium-blue expands */
-      0 0    0   45px   #082f72;
+      0 0    0   47px   #052e76;
   }
 }
 
