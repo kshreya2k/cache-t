@@ -179,7 +179,7 @@ body {
 /* blue keyframes */
 @keyframes zoomOut {
   0%, 100% {
-    box-shadow: 0 0 0 5px  #002668;   /* thin at zoom-in */
+    box-shadow: 0 0 0 8px  #002668;   /* thin at zoom-in */
   }
   50% {
     box-shadow: 0 0 0 45px #0a3277;   /* fat at zoom-out */
