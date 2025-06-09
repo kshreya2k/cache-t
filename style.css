@@ -56,8 +56,8 @@ body {
   position: absolute;
   top: -10px; /* push above the header */
   right: 20px;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border: none;
   border-radius: 50%;
   background-color: white;
