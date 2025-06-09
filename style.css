@@ -160,39 +160,44 @@ body {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  box-shadow: 0 0 0 16px #d3d3d3;   /* base thickness */
+  box-shadow: 0 0 0 17px #d3d3d3;   /* base thickness */
   animation: greyZoom 1.6s ease-in-out infinite;
   z-index: 1;
 }
 
-/* blue ring animation (unchanged) */
+/* animating blue rings (now with three layers) */
 .circle::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  box-shadow: 0 0 0 5px  #021e4f;   /* start thin & dark */
-  animation: zoomOut 1.6s ease-in-out infinite;
   z-index: 2;
+  /* three shadows:
+     1) deepest blurred (hidden by default)
+     2) inner deep-blue static
+     3) outer medium-blue animating */
+  box-shadow:
+    0 0    0    5px   rgba(11,31,72,0),  /* blurred ring off */
+    0 0    0    8px   #06265e,           /* deep-blue static */
+    0 0    0    8px   #082f72;           /* medium-blue thin */
+  animation: zoomOut 1.6s ease-in-out infinite;
 }
 
-/* blue keyframes */
 @keyframes zoomOut {
   0%, 100% {
-    box-shadow: 0 0 0 8px  #002668;   /* thin at zoom-in */
+    box-shadow:
+      0 0    0    0px   rgba(11,31,72,0),  /* no blur at start/end */
+      0 0    0    5px   #06265e,           /* inner deep-blue thin */
+      0 0    0    8px   #082f72;           /* outer medium-blue thin */
   }
   50% {
-    box-shadow: 0 0 0 45px #092c68;   /* fat at zoom-out */
-  }
-}
-
-/* grey keyframes (inverse of blue) */
-@keyframes greyZoom {
-  0%, 100% {
-    box-shadow: 0 0 0 18px #d3d3d3;   /* grey at max when blue is thin */
-  }
-  50% {
-    box-shadow: 0 0 0 5px #d3d3d3;   /* grey at base when blue is fat */
+    box-shadow:
+      /* blurred halo: blur 20px, spread 10px, 25% opacity */
+      0 0   20px  10px  rgba(0, 27, 82, 0.25),
+      /* keep the deep-blue static */
+      0 0    0    8px   #06265e,
+      /* outer medium-blue expands */
+      0 0    0   45px   #082f72;
   }
 }
 
