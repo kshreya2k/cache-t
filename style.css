@@ -41,9 +41,9 @@ body {
 
 .header h1 {
   font-size: 19px;
-  font-weight: 600;
+  font-weight: 730;
   margin: 0;
-  color: #000f28;
+  color: #00112d;
 }
 
 .header-subtext {
@@ -54,7 +54,7 @@ body {
 
 .close-btn {
   position: absolute;
-  top: 20px;
+  top: -10px; /* push above the header */
   right: 20px;
   width: 32px;
   height: 32px;
@@ -72,11 +72,11 @@ body {
   line-height: 1;
   padding: 0;
 }
-
+/* 
 .circle {
-  width: 108px;
-  height: 108px;
-  margin: 0 auto 50px;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 5vh;
   background-color: white;
   border-radius: 100%;
   display: flex;
@@ -89,7 +89,7 @@ body {
 .circle-content {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 0.5px;
 }
 
 @keyframes pulse-ring {
@@ -102,24 +102,24 @@ body {
   100% {
     box-shadow: 0 0 0 10px #002462;
   }
-}
+} */
 
 .logo {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   object-fit: contain;
 }
 
 .circle-text {
   font-size: 13px;
-  font-weight: bold;
-  color: #01102b;
+  font-weight: 750;
+  color: #00112d;
 }
 
 .clock {
   font-size: 48px;
   font-weight: bold;
-  margin-top: 80px;
+  margin-top: 12vh;
   margin-bottom: 2vh;
   line-height: 1.2;
 }
@@ -136,6 +136,74 @@ body {
 .expire {
   font-size: 14px;
   font-weight: bold;
-  margin-top: 5vh; /* Increased gap */
+  margin-top: 4.5vh; /* Increased gap */
 
+}
+
+.circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 5vh;
+  background: white;
+  border-radius: 50%;
+  overflow: visible;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* grey ring behind everything */
+.circle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 0 16px #d3d3d3;   /* base thickness */
+  animation: greyZoom 1.6s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* blue ring animation (unchanged) */
+.circle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px  #021e4f;   /* start thin & dark */
+  animation: zoomOut 1.6s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* blue keyframes */
+@keyframes zoomOut {
+  0%, 100% {
+    box-shadow: 0 0 0 5px  #002668;   /* thin at zoom-in */
+  }
+  50% {
+    box-shadow: 0 0 0 45px #0a3277;   /* fat at zoom-out */
+  }
+}
+
+/* grey keyframes (inverse of blue) */
+@keyframes greyZoom {
+  0%, 100% {
+    box-shadow: 0 0 0 18px #d3d3d3;   /* grey at max when blue is thin */
+  }
+  50% {
+    box-shadow: 0 0 0 5px #d3d3d3;   /* grey at base when blue is fat */
+  }
+}
+
+
+.circle-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.5px;
+}
+.circle-text {
+  font-size: 10px;
 }
